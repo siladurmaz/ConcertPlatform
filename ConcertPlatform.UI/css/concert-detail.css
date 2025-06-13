@@ -1,39 +1,133 @@
-.concert-card {
-  display: flex;
-  flex-direction: column;
-  background-color: #1a1a1a;
-  color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  max-width: 800px;
-  margin: auto;
-  overflow: hidden;
-  margin-top: 40px;
+/* Genel düzen */
+body {
+  background-color: #f5f7fa;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.concert-image-container {
-  height: 400px;
+/* Konser detay kartı */
+.concert-card {
+  max-width: 900px;
+  background: white;
+  margin: 40px auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* Görsel alanı */
+.concert-image-container {
+  height: 420px;
+  overflow: hidden;
+  position: relative;
 }
 
 .concert-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease-in-out;
 }
 
+.concert-card:hover .concert-image {
+  transform: scale(1.03);
+}
+
+/* Bilgi kutusu */
 .concert-info {
-  padding: 20px;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
+/* Başlık */
 .concert-title {
-  font-size: 26px;
-  margin-bottom: 15px;
-  color: #ffc107;
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+  border-left: 5px solid #ffc107;
+  padding-left: 12px;
 }
 
-.concert-price span {
-  color: #4caf50;
+/* Detay alanları */
+.concert-info p {
+  margin: 4px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.concert-info p strong {
+  color: #000;
+}
+
+.concert-price {
   font-size: 18px;
   font-weight: bold;
+  color: #4caf50;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+}
+
+.btn-primary:hover {
+  background-color: #c2185b;
+}
+
+.back-link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-link-container a {
+  color: #555;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.back-link-container a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .concert-card {
+    margin: 20px;
+  }
+
+  .concert-info {
+    padding: 20px;
+  }
+
+  .concert-title {
+    font-size: 24px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
 }
