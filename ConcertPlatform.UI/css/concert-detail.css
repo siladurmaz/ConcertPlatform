@@ -71,7 +71,6 @@ body {
   color: #000;
 }
 
-/* Fiyat */
 .concert-price {
   font-size: 18px;
   font-weight: bold;
@@ -79,7 +78,6 @@ body {
   margin-top: 10px;
 }
 
-/* Bilet Al butonu */
 .btn-primary {
   background-color: #e91e63;
   color: white;
@@ -98,7 +96,6 @@ body {
   background-color: #c2185b;
 }
 
-/* Geri Dön linki */
 .back-link-container {
   text-align: center;
   margin-top: 20px;
