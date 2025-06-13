@@ -116,7 +116,6 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive yapı */
 @media (max-width: 768px) {
   .concert-card {
     margin: 20px;
