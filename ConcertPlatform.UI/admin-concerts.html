@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Konser Yönetimi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Admin sayfasına özel stiller için ayrı bir CSS dosyası da oluşturulabilir -->
+    <!-- <link rel="stylesheet" href="css/admin-style.css"> -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <a href="index.html">Konser Platformu</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" id="concertsNav">Konserler</a>
+                <a href="my-tickets.html" id="myTicketsNav" style="display:none;">Biletlerim</a>
+                <a href="admin-concerts.html" id="adminConcertsNav" class="active" style="display:none;">Konser Yönetimi</a>
+
+                <a href="login.html" id="loginNav" style="display:none;">Giriş Yap</a>
+                <a href="register.html" id="registerNav" style="display:none;">Kayıt Ol</a>
+                <span id="userInfoNav" style="display:none;"></span>
+                <a href="#" id="logoutNav" style="display:none;">Çıkış Yap</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container admin-container">
+        <h1>Konser Yönetimi (Admin)</h1>
+
+        <div class="admin-actions" style="margin-bottom: 20px;">
+            <a href="admin-concert-form.html" class="btn btn-primary">Yeni Konser Ekle</a>
+            <!-- admin-concert-form.html'i sonra oluşturacağız -->
+        </div>
+
+        <section id="adminConcertListSection">
+            <h2>Mevcut Konserler</h2>
+            <table id="adminConcertTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Başlık</th>
+                        <th>Sanatçı</th>
+                        <th>Tarih</th>
+                        <th>Mekan</th>
+                        <th>Fiyat</th>
+                        <th>Kategori</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody id="adminConcertTableBody">
+                    <!-- Konserler buraya JavaScript ile yüklenecek -->
+                    <tr><td colspan="8" class="loading-message">Konserler yükleniyor...</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Konser Platformu</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script> <!-- Yeni oluşturacağımız admin.js dosyası -->
+</body>
+</html>

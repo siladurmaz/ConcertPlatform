@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - Konser Platformu</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- CSS dosyamızı bağladık -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <a href="index.html">Konser Platformu</a>
+            </div>
+            <div class="nav-links">
+                <a href="login.html" id="loginNav" class="active">Giriş Yap</a>
+                <a href="register.html" id="registerNav">Kayıt Ol</a> <!-- register.html'i sonra oluşturacağız -->
+                <span id="userInfoNav" style="display:none;"></span>
+                <a href="#" id="logoutNav" style="display:none;">Çıkış Yap</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="login-section">
+            <h1>Giriş Yap</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Kullanıcı Adı:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+            <p id="loginMessage" class="message error-message" style="display:none;"></p>
+            <p class="form-switch">Hesabın yok mu? <a href="register.html">Hemen Kayıt Ol</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Konser Platformu</p>
+    </footer>
+
+    <script src="js/main.js"></script> <!-- Genel JS dosyamızı bağladık -->
+    <script src="js/auth.js"></script> <!-- Auth JS dosyamızı bağladık -->
+</body>
+</html>

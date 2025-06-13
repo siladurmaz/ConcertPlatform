@@ -1,0 +1,677 @@
+/* Genel Sayfa Stilleri */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    /* max-width: 700px; /* Formlar için daha dar - Bu genel container için artık geçerli olmayabilir */
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Navigasyon Stilleri */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav .nav-brand a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+    background-color: #555;
+}
+
+nav .nav-links #userInfoNav {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Header ve Navigasyonun İçeriğini Ortala ve Ayır */
+header nav {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Form Stilleri */
+h1 { /* Genel H1 stili, sayfa başlıkları için */
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em; /* Biraz daha belirgin */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group input[type="datetime-local"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Önemli */
+    font-size: 1em;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+
+/* Buton Stilleri */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-weight: bold; /* Buton yazılarını kalın yapalım */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+
+/* Form için butonun tam genişlikte olması */
+form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+}
+
+
+/* Mesaj Stilleri */
+.message {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-switch {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-switch a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-switch a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer Stilleri */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Anasayfa Container Genişliği */
+.index-container {
+    max-width: 1200px; /* Anasayfa için daha geniş bir container, grid'e uygun */
+    /* background-color: transparent; /* index.html için container arka planını kaldırabiliriz */
+    /* box-shadow: none; */
+}
+.index-container h1 { /* Anasayfa başlığı */
+    text-align: center; /* Ortala */
+    font-size: 2em; /* Biraz daha büyük */
+    margin-bottom: 30px;
+}
+
+
+/* --- YENİ KONSER KARTI TASARIMI İÇİN STİLLER --- */
+
+/* #concertList ID'li div'e .concert-grid-container class'ı eklenmişti index.html'de */
+#concertList.concert-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Kart genişliği ayarı */
+    gap: 30px; /* Kartlar arası boşluk */
+}
+
+.concert-card { /* Eski .concert-item yerine bu class'ı kullanacağız */
+    background-color: #1a1a1a; /* Daha koyu bir arka plan */
+    color: #fff; /* Beyaz metin */
+    border-radius: 10px; /* Biraz daha yuvarlak köşeler */
+    overflow: hidden; /* Resmin köşelerden taşmasını engelle */
+    position: relative; /* İçerideki absolut pozisyonlu elementler için */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Daha belirgin gölge */
+    display: flex;
+    flex-direction: column;
+    min-height: 420px; /* Kartın minimum yüksekliği */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.concert-card:hover {
+    transform: translateY(-5px); /* Hafif yukarı kalkma efekti */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.concert-card-image-container {
+    width: 100%;
+    height: 260px; /* Resim alanı yüksekliği */
+    position: relative;
+    overflow: hidden;
+}
+
+.concert-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.concert-card:hover .concert-card-image {
+    transform: scale(1.08); /* Hover'da daha belirgin zoom */
+}
+
+.concert-card-image-container::after { /* Gradient overlay */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%; /* Gradient yüksekliğini biraz azaltalım, %80'den %60'a */
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%); /* Daha güçlü ve kontrollü bir gradient */
+    z-index: 1;
+    border-radius: 0 0 8px 8px; /* Kartın alt köşelerine uyum sağlasın (opsiyonel) */
+}
+
+.concert-card-date-badge {
+    position: absolute;
+    top: 15px; /* Rozeti resmin içine alalım */
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.6); /* Yarı saydam siyah */
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 3;
+    line-height: 1.2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.concert-card-date-badge .day {
+    display: block;
+    font-size: 1.7em;
+}
+.concert-card-date-badge .month-year {
+    display: block;
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+.concert-card-date-badge .time {
+    display: block;
+    font-size: 0.85em;
+    margin-top: 2px;
+}
+
+.concert-card-info {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    margin-top: -90px; /* Metni resmin üzerine daha çok çek */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* İçeriği en alta yasla */
+}
+
+.concert-card-info h3 {
+    font-size: 1.6em; /* Referans tasarıma göre ayarla */
+    margin-bottom: 8px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.concert-card-info .artist-venue {
+    font-size: 0.95em;
+    color: #b0b0b0;
+    /* margin-bottom: auto; ESKİ - Fiyat ve butonlar geleceği için bunu kaldıralım veya ayarlayalım */
+    margin-bottom: 10px; /* Fiyattan önce biraz boşluk */
+    /* padding-bottom: 15px; ESKİ */
+    text-shadow: none;
+}
+
+.concert-card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px; /* artist-venue'den sonra otomatik boşluk oluşacağı için bu ayarlanabilir */
+}
+
+.concert-card-actions .btn { /* .btn class'ı zaten genel tanımlı, onu kullanıyoruz */
+    flex-grow: 1;
+    padding: 12px; /* Buton padding'i biraz daha büyük */
+    font-size: 0.9em;
+}
+
+.concert-card-actions .btn-details-card {
+    background-color: #e4002b; /* Kırmızı (JJ) */
+    color: white;
+    border:none;
+}
+.concert-card-actions .btn-details-card:hover {
+    background-color: #c30024;
+}
+
+/* Eğer Bilet Al butonu eklenecekse onun için stil */
+.concert-card-actions .btn-buy-ticket-card {
+    background-color: #ffc107; /* Sarı - Uyarı rengi (mevcut .btn-add-ticket gibi) */
+    color: #212529; /* Koyu metin */
+    border: none;
+}
+.concert-card-actions .btn-buy-ticket-card:hover {
+    background-color: #e0a800; /* Biraz daha koyu sarı */
+}
+.concert-card-price {
+    font-size: 1.1em; /* Fiyatı biraz daha belirgin yapalım */
+    color: #4CAF50; /* Yeşil bir renk veya tasarımına uygun başka bir renk */
+    font-weight: bold;
+    margin-bottom: 15px; /* Butonlardan önce boşluk */
+    text-align: left; /* Fiyatı sola yaslayalım */
+}
+.concert-card-price strong {
+    color: #fff; /* Beyaz zemin üzerinde daha iyi okunması için, eğer kart arka planı koyuysa */
+                 /* Veya fiyatın kendi rengini kullanabilir */
+}
+
+
+/* --- ESKİ .concert-item stillerini YORUM SATIRINA AL veya SİL --- */
+/*
+.concert-item { ... }
+.concert-item img { ... }
+.concert-item h3 { ... }
+.concert-item p { ... }
+.concert-item .artist { ... }
+.concert-item .date-venue { ... }
+.concert-item .price { ... }
+.concert-item .actions { ... }
+.concert-item .btn-details { ... }
+.concert-item .btn-add-ticket { ... }
+*/
+
+
+.loading-message,
+.no-concerts-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+    padding: 20px;
+    grid-column: 1 / -1; /* Grid içindeyse tüm sütunları kaplasın */
+}
+
+/* Filtreleme Alanı Stilleri */
+.filter-sort-area {
+    background-color: #fff; /* Filtre alanını beyaz yapalım */
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-wrap: wrap; /* Küçük ekranlarda alt alta geçsin */
+    gap: 20px; /* Elemanlar arası boşluk */
+    align-items: flex-end; /* Butonları ve inputları hizala */
+}
+.filter-sort-area div { /* Her bir filtre grubunu sarmalayan div */
+    display: flex;
+    flex-direction: column; /* Etiket ve input alt alta */
+}
+.filter-sort-area label {
+    margin-bottom: 5px; /* Etiketle input arası boşluk */
+    font-weight: 600; /* Biraz daha kalın */
+    font-size: 0.9em;
+    color: #444;
+}
+.filter-sort-area input[type="text"],
+.filter-sort-area select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    min-width: 180px; /* Minimum genişlik */
+    font-size: 0.95em;
+}
+.filter-sort-area button { /* Butonlar için */
+    align-self: flex-end; /* Etiket olmadığı için kendini aşağı hizala */
+    margin-bottom: 0; /* Diğer div'lerdeki inputlarla aynı hizada olsun */
+}
+
+
+
+/* Konser Detay Sayfası Container */
+.concert-detail-container {
+    max-width: 800px;
+}
+#concertDetailSection {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+#concertDetailSection h1 { /* Konser başlığı */
+    font-size: 2.2em; /* Biraz daha büyük */
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+#concertDetailSection img.concert-image-large {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+#concertDetailSection p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+#concertDetailSection .detail-label {
+    font-weight: bold;
+    color: #333;
+}
+#concertDetailSection .detail-price {
+    font-size: 1.6em; /* Biraz daha büyük */
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+#concertDetailSection .btn-add-ticket-detail {
+    background-color: #ffc107;
+    color: #212529;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+#concertDetailSection .btn-add-ticket-detail:hover {
+    background-color: #e0a800;
+}
+
+/* Biletlerim Sayfası Container */
+.my-tickets-container {
+    max-width: 900px;
+}
+/* Bilet Listesi ve Öğeleri - YENİ TASARIM */
+#myTicketsList {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.ticket-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    margin-bottom: 25px;
+    overflow: hidden;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+}
+.ticket-item h3 { /* .ticket-item içindeki h3 */
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.6em;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.ticket-item p { /* .ticket-item içindeki p */
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    color: #333;
+}
+.ticket-main {
+    padding: 20px;
+    flex-grow: 1;
+    border-right: 2px dashed #ccc;
+    position: relative;
+}
+.ticket-main::before,
+.ticket-main::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f4f7f6;
+    border-radius: 50%;
+    right: -11px;
+    z-index: 1;
+}
+.ticket-main::before {
+    top: -10px;
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,0.05);
+}
+.ticket-main::after {
+    bottom: -10px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+.ticket-stub {
+    padding: 20px;
+    width: 240px;
+    min-width: 220px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    box-sizing: border-box;
+}
+.ticket-item .ticket-subtitle {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.ticket-main p strong, .ticket-stub p strong {
+    color: #000;
+    min-width: 70px;
+    display: inline-block;
+}
+.ticket-details-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 10px;
+    margin-bottom: 15px;
+}
+.barcode-area {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.barcode-placeholder {
+    display: inline-block;
+    width: 80%;
+    height: 40px;
+    background-image: repeating-linear-gradient(
+        to right,
+        #333,
+        #333 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    border: 1px solid #ccc;
+}
+.ticket-id-label {
+    font-size: 0.7em;
+    color: #777;
+    text-align: center;
+    margin-top: 2px;
+}
+.ticket-stub .info-block {
+    margin-bottom: 10px;
+}
+.ticket-stub .info-block strong {
+    display: block;
+    font-size: 0.8em;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+.ticket-stub .info-block span {
+    font-size: 0.95em;
+    color: #000;
+    display: block;
+}
+.ticket-stub .barcode-area-stub {
+    margin-top: auto;
+}
+.ticket-item .purchase-date {
+    font-style: italic;
+    font-size: 0.85em;
+    color: #6c757d;
+    text-align: right;
+}
+
+/* Admin Sayfası Container */
+.admin-container {
+    max-width: 1200px;
+}
+/* Admin Konser Tablosu Stilleri */
+#adminConcertTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+#adminConcertTable th,
+#adminConcertTable td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+#adminConcertTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+#adminConcertTable tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+#adminConcertTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
+#adminConcertTable .actions-cell button {
+    margin-right: 5px;
+    padding: 6px 10px;
+    font-size: 0.85em;
+}
+#adminConcertTable .actions-cell button:last-child {
+    margin-right: 0;
+}
+.btn-edit {
+    background-color: #ffc107;
+    color: #212529;
+}
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+.btn-delete:hover {
+    background-color: #c82333;
+}
+#adminConcertTable .loading-message td {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Admin Form Sayfası Container */
+.admin-form-container {
+    max-width: 800px;
+}
+.admin-form-container h1 {
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}

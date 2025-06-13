@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Konser Formu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <a href="index.html">Konser Platformu</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" id="concertsNav">Konserler</a>
+                <a href="my-tickets.html" id="myTicketsNav" style="display:none;">Biletlerim</a>
+                <a href="admin-concerts.html" id="adminConcertsNav" style="display:none;">Konser Yönetimi</a>
+                <a href="login.html" id="loginNav" style="display:none;">Giriş Yap</a>
+                <a href="register.html" id="registerNav" style="display:none;">Kayıt Ol</a>
+                <span id="userInfoNav" style="display:none;"></span>
+                <a href="#" id="logoutNav" style="display:none;">Çıkış Yap</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container admin-form-container">
+        <h1 id="formTitle">Yeni Konser Ekle</h1> <!-- Başlık JS ile değişecek -->
+
+        <form id="concertForm">
+            <input type="hidden" id="concertId" name="concertId"> <!-- Düzenleme için gizli ID alanı -->
+
+            <div class="form-group">
+                <label for="title">Başlık:</label>
+                <input type="text" id="title" name="title" required maxlength="100">
+            </div>
+
+            <div class="form-group">
+                <label for="artist">Sanatçı:</label>
+                <input type="text" id="artist" name="artist" required maxlength="100">
+            </div>
+
+            <div class="form-group">
+                <label for="date">Tarih ve Saat:</label>
+                <input type="datetime-local" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="venue">Mekan:</label>
+                <input type="text" id="venue" name="venue" required maxlength="200">
+            </div>
+
+            <div class="form-group">
+                <label for="price">Fiyat (TL):</label>
+                <input type="number" id="price" name="price" required step="0.01" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="categoryId">Kategori:</label>
+                <select id="categoryId" name="categoryId">
+                    <option value="">Kategori Seçiniz...</option>
+                    <!-- Kategoriler buraya JS ile API'den yüklenecek -->
+                </select>
+            </div>
+           
+            <div class="form-group">
+                <label for="imageUrl">Resim URL (Opsiyonel):</label>
+                <input type="url" id="imageUrl" name="imageUrl" maxlength="500">
+            </div>
+            
+
+            <div class="form-actions" style="margin-top: 25px;">
+                <button type="submit" class="btn btn-primary" id="submitButton">Kaydet</button>
+                <a href="admin-concerts.html" class="btn btn-secondary" style="margin-left: 10px;">İptal / Geri Dön</a>
+            </div>
+        </form>
+        <p id="formMessage" class="message" style="display:none; margin-top:15px;"></p>
+    </main>
+
+    <footer>
+        <p>© 2024 Konser Platformu</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script> 
+</body>
+</html>
