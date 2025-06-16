@@ -43,12 +43,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("http://127.0.0.1:5500", // Live Server'ın varsayılan origin'i
-                                             "http://localhost:5500")  // Bazen localhost olarak da gelebilir
+                          policy.WithOrigins( "http://127.0.0.1:5500",
+                                              "http://localhost:5500",
+                                              "https://black-flower-06749fc1e.2.azurestaticapps.net")  // Bazen localhost olarak da gelebilir
                                 .AllowAnyHeader()
                                 .AllowAnyMethod();
-                          // Eğer frontend'in farklı bir portta çalışıyorsa, o adresi de buraya ekle.
-                          // Örneğin: .WithOrigins("http://localhost:3000", "http://127.0.0.1:5500", ...)
                       });
 });
 // +++++++++++++ CORS AYARLARI BİTİŞ +++++++++++++
@@ -85,7 +84,7 @@ var app = builder.Build();
 app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment()|| app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

@@ -5,12 +5,12 @@ namespace ConcertPlatform.API.Models.DTOs
     {
         public int Id { get; set; }
         public int ConcertId { get; set; }
-        public string? ConcertTitle { get; set; } // Konser başlığını da gösterelim
-        public string? ConcertArtist { get; set; } // Sanatçıyı da gösterelim
-        public DateTime ConcertDate { get; set; } // Konser tarihini de gösterelim
-        public string? ConcertVenue { get; set; } // Konser mekanını da gösterelim
+        public string? ConcertTitle { get; set; } 
+        public string? ConcertArtist { get; set; } 
+        public DateTime ConcertDate { get; set; } 
+        public string? ConcertVenue { get; set; } 
         public int UserId { get; set; }
-        public string? Username {get; set;} // Hangi kullanıcıya ait olduğu
+        public string? Username {get; set;} 
         public DateTime PurchaseDate { get; set; }
     }
 }

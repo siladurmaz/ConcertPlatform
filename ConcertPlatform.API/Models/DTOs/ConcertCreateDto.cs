@@ -13,7 +13,6 @@ namespace ConcertPlatform.API.Models.DTOs
         public string Artist { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "Date is required.")]
-        // Gelecekte bir tarih olması gibi özel bir doğrulama eklenebilir (Custom Validation Attribute)
         public DateTime Date { get; set; }
 
         [Required(ErrorMessage = "Venue is required.")]
@@ -24,10 +23,8 @@ namespace ConcertPlatform.API.Models.DTOs
         [Range(0.01, 100000, ErrorMessage = "Price must be between 0.01 and 100000.")]
         public decimal Price { get; set; }
 
-        // Kategori zorunluysa [Required] eklenebilir.
-        // Eğer opsiyonel ise, UI tarafında "Kategori Seçilmedi" gibi bir seçenek sunulabilir.
         public int? CategoryId { get; set; }
         [MaxLength(500)]
-        public string? ImageUrl { get; set; } // YENİ EKLENEN ALAN
+        public string? ImageUrl { get; set; } 
     }
 }

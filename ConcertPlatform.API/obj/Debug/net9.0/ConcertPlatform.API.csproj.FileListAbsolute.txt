@@ -161,6 +161,8 @@ C:\Users\Fürkan\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\Co
 C:\Users\Fürkan\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\ref\ConcertPlatform.API.dll
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\bin\Debug\net9.0\appsettings.json
+C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\bin\Debug\net9.0\appsettings.Production.json
+C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\bin\Debug\net9.0\concert_platform.db
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\bin\Debug\net9.0\ConcertPlatform.API.staticwebassets.endpoints.json
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\bin\Debug\net9.0\ConcertPlatform.API.exe
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\bin\Debug\net9.0\ConcertPlatform.API.deps.json
@@ -309,6 +311,7 @@ C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\Con
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\ConcertPlatform.API.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\ConcertPlatform.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\ConcertPlatform.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\ConcertPlatform.API.sourcelink.json
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\scopedcss\bundle\ConcertPlatform.API.styles.css
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Lenovo\Desktop\ConcertPlatform\ConcertPlatform.API\obj\Debug\net9.0\staticwebassets.build.json.cache

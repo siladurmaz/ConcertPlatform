@@ -4,9 +4,6 @@ namespace ConcertPlatform.API.Models.DTOs
 {
     public class ConcertUpdateDto
     {
-        // Id güncellenmeyeceği için burada yok. Route'tan alacağız.
-        // Ancak bazen API tasarımında PUT ile gönderilen DTO'nun da ID içermesi istenebilir
-        // ve route'daki ID ile eşleşip eşleşmediği kontrol edilebilir. Şimdilik ID'siz bırakalım.
 
         [Required(ErrorMessage = "Title is required.")]
         [MaxLength(100, ErrorMessage = "Title cannot be longer than 100 characters.")]
@@ -29,6 +26,6 @@ namespace ConcertPlatform.API.Models.DTOs
 
         public int? CategoryId { get; set; }
         [MaxLength(500)]
-        public string? ImageUrl { get; set; } // YENİ EKLENEN ALAN
+        public string? ImageUrl { get; set; } 
     }
 }
