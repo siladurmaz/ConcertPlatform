@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConcertPlatform.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7fa77e4fcdea415ef65d2897d4eb98a3daf8ebb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9d582de181b983e103469fb3a2adf9d3d475b50")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConcertPlatform.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConcertPlatform.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

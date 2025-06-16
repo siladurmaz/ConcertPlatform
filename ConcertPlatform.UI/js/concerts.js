@@ -3,7 +3,7 @@
 // Sayfalama için global değişkenler
 let currentPage = 1;
 const pageSize = 6; // Bir seferde yüklenecek konser sayısı (API'deki varsayılan pageSize ile aynı olmalı)
-let isLoadingMore = false; // Birden fazla "daha fazla yükle" isteğini engellemek için
+let isLoadingMore = false; 
 let currentFilters = { // Mevcut filtre ve sıralama durumunu saklamak için
     categoryId: '',
     searchTerm: '',
@@ -161,7 +161,7 @@ async function loadConcerts() { // Fonksiyon imzası sadeleşti, global değişk
     }
 }
 
-// renderConcerts fonksiyonunu GÜNCELLE (append parametresi alacak şekilde)
+// renderConcerts fonksiyonunu 
 function renderConcerts(concerts, append = false) {
     const concertListDiv = document.getElementById('concertList');
     if (!append) { // Eğer append false ise (ilk yükleme veya filtre/sıralama değişimi)
@@ -246,7 +246,7 @@ function viewConcertDetails(concertId) {
 async function addTicketToCart(concertId) {
     if (!isLoggedIn()) {
         showGlobalMessage('Bilet alabilmek için lütfen giriş yapınız.', 'warning');
-        // alert('Bilet alabilmek için lütfen giriş yapınız.');
+        
         setTimeout(() => { window.location.href = 'login.html'; }, 2000);
         return;
     }

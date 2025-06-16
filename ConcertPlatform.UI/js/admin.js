@@ -100,7 +100,7 @@ function escapeSingleQuotes(str) {
 
 function editConcert(concertId) {
     window.location.href = `admin-concert-form.html?id=${concertId}`;
-    // console.log(`Edit concert ID: ${concertId}`); // Artık gerek yok gibi
+    // console.log(`Edit concert ID: ${concertId}`); // Artık gerek yok
 }
 
 async function confirmDeleteConcert(concertId, concertTitle) {
@@ -323,7 +323,7 @@ async function initializeConcertForm() {
             venue: form.venue.value.trim(),
             price: parseFloat(form.price.value),
             categoryId: form.categoryId.value ? parseInt(form.categoryId.value) : null,
-            imageUrl: imageUrlInput ? imageUrlInput.value.trim() || null : null // ImageUrl'i al
+            imageUrl: imageUrlInput ? imageUrlInput.value.trim() || null : null 
         };
 
         if (!formData.title || !formData.artist || !formData.date || !formData.venue || isNaN(formData.price) || formData.price <= 0) {

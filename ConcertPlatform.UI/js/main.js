@@ -1,7 +1,6 @@
 // js/main.js
 
 // API'nin base URL'i. API projen hangi portta çalışıyorsa onu yazmalısın.
-// Örneğin: 'https://localhost:7197' (Kendi API portunla değiştir!)
 const API_BASE_URL = 'http://localhost:5197'; // HTTP OLARAK AYARLI OLDUĞUNDAN EMİN OL
 
 // JWT token'ını ve kullanıcı bilgilerini Local Storage'da saklamak için anahtarlar
@@ -9,7 +8,7 @@ const TOKEN_KEY = 'concert_platform_token';
 const USER_INFO_KEY = 'concert_platform_user_info';
 
 /**
- * Token'ı Local Storage'dan alır.
+ 
  * @returns {string|null} Saklanmış token veya token yoksa null.
  */
 function getToken() {

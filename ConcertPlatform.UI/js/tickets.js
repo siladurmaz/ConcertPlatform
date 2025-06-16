@@ -50,7 +50,7 @@ function renderMyTickets(tickets) {
 
         const concertDate = new Date(ticket.concertDate);
         const formattedConcertDate = concertDate.toLocaleDateString('tr-TR', {
-            day: '2-digit', month: 'short', year: 'numeric' // Örn: 10 TEM 2021
+            day: '2-digit', month: 'short', year: 'numeric' 
         }).toUpperCase(); // Büyük harf yapalım
         const formattedConcertTime = concertDate.toLocaleTimeString('tr-TR', {
             hour: '2-digit', minute: '2-digit'
@@ -62,10 +62,9 @@ function renderMyTickets(tickets) {
         //     year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
         // });
 
-        // Gate, Seat, Row gibi bilgiler API'den gelmiyorsa, bunları demo olarak ekleyebiliriz.
         const demoGate = "05";
         const demoSeat = "A15";
-        const demoRow = "07";
+        const demoRow = "07"; //biz kendimiz geçici bi değer atadık koltuk numarası için
 
         ticketItem.innerHTML = `
             <div class="ticket-main">

@@ -21,7 +21,7 @@ if (jwtSettings == null || string.IsNullOrEmpty(jwtSettings.Key))
 }
 builder.Services.AddSingleton(jwtSettings);
 
-// --- DbContext'i ekle ---
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -62,7 +62,7 @@ builder.Services.AddAuthentication(options =>
 .AddJwtBearer(options =>
 {
     options.SaveToken = true;
-    options.RequireHttpsMetadata = false; // Geliştirme için false, production'da true olmalı
+    options.RequireHttpsMetadata = true; // Geliştirme için false, production'da true olmalı
     options.TokenValidationParameters = new TokenValidationParameters()
     {
         ValidateIssuer = true,
@@ -108,6 +108,6 @@ app.UseRouting(); // Routing middleware'i
 app.UseAuthentication(); // Önce kimlik doğrulama
 app.UseAuthorization();  // Sonra yetkilendirme
 
-app.MapControllers();   // Controller endpoint'lerini eşle
+app.MapControllers();   // Controller endpoint'lerini eşle //get post put delete =crud likke this
 
 app.Run();
