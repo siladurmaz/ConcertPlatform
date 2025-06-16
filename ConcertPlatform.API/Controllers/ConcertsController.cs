@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ConcertPlatform.API.Data;
 using ConcertPlatform.API.Models;
-using ConcertPlatform.API.Models.DTOs; // DTO'lar için using 
+using ConcertPlatform.API.Models.DTOs; 
 using Microsoft.AspNetCore.Authorization;
 
 namespace ConcertPlatform.API.Controllers
