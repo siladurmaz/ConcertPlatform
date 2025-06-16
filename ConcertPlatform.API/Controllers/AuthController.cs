@@ -1,14 +1,14 @@
 using ConcertPlatform.API.Data;
 using ConcertPlatform.API.Models;
 using ConcertPlatform.API.Models.DTOs;
-using ConcertPlatform.API.Helpers; // JwtSettings için
+using ConcertPlatform.API.Helpers; 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using BCrypt.Net; // Şifre doğrulaması için
+using BCrypt.Net; // Şifre  
 
 namespace ConcertPlatform.API.Controllers
 {
@@ -52,9 +52,7 @@ namespace ConcertPlatform.API.Controllers
             await _context.SaveChangesAsync();
 
             // Kayıt sonrası direkt token dönebilir veya sadece success mesajı
-            // Şimdilik sadece CreatedAtAction ile kullanıcı bilgisini dönelim (token olmadan)
-            // veya login olmasını isteyelim.
-            // return CreatedAtAction(nameof(Login), new { username = user.Username }, new { Message = "User registered successfully. Please login." });
+           
             return Ok(new { Message = "User registered successfully. Please login." });
         }
 
@@ -95,7 +93,7 @@ namespace ConcertPlatform.API.Controllers
             return Ok(new TokenResponseDto
             {
                 Token = tokenString,
-                Expiration = token.ValidTo, // tokenDescriptor.Expires.Value de olurdu
+                Expiration = token.ValidTo, 
                 Username = user.Username,
                 Role = user.Role
             });

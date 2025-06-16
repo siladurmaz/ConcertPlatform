@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/c828d7be-f028-4de7-ae3b-e1540a5625c5/resourceGroups/appsvc_windows_westeurope/providers/Microsoft.Web/sites/concertplatfrom",
+  "appService.deploySubpath": "ConcertPlatform.API"
+}

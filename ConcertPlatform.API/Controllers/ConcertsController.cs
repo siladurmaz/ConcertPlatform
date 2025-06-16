@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ConcertPlatform.API.Data;
 using ConcertPlatform.API.Models;
-using ConcertPlatform.API.Models.DTOs; // DTO'lar için using eklendi
+using ConcertPlatform.API.Models.DTOs; 
 using Microsoft.AspNetCore.Authorization;
 
 namespace ConcertPlatform.API.Controllers
@@ -52,7 +52,7 @@ public async Task<ActionResult<IEnumerable<ConcertDto>>> GetConcerts(
         );
     }
 
-    // 3. Sıralama (Fiyata göre sıralama özel olarak ele alınacak)
+    // 3. Sıralama (Fiyata göre sıralama)
     bool isPriceSort = !string.IsNullOrWhiteSpace(sortBy) && sortBy.Trim().ToLower() == "price";
     bool isDescending = !string.IsNullOrWhiteSpace(sortOrder) && sortOrder.Trim().ToLower() == "desc";
 
@@ -71,14 +71,13 @@ public async Task<ActionResult<IEnumerable<ConcertDto>>> GetConcerts(
                 case "title":
                     query = isDescending ? query.OrderByDescending(c => c.Title) : query.OrderBy(c => c.Title);
                     break;
-                default: // Tanımsız sortBy veya price dışı bir durum (ama price'ı yukarıda eledik)
+                default: 
                     query = query.OrderByDescending(c => c.Date); // Varsayılan
                     break;
             }
         }
         else
         {
-            // sortBy belirtilmemişse varsayılan sıralama
             query = query.OrderByDescending(c => c.Date);
         }
     }
@@ -87,32 +86,23 @@ public async Task<ActionResult<IEnumerable<ConcertDto>>> GetConcerts(
         // Fiyata göre sıralama İSTENİYORSA, ama henüz veritabanında yapmıyoruz.
         // Varsayılan sıralamayı (tarihe göre) uygula, böylece ToListAsync sonrası tutarlı bir başlangıç noktamız olur.
         // Bu, eğer sortBy sadece "price" ise ve başka bir sıralama yoksa önemlidir.
-        // Eğer sortBy "price" değilse, zaten yukarıdaki blokta sıralama yapılmış olacak.
-        // Bu biraz gereksiz olabilir, çünkü fiyata göre sıralama her şeyi ezecek.
         // Ama ToListAsync öncesi bir OrderBy olması genellikle iyidir.
         if (string.IsNullOrWhiteSpace(sortBy) || sortBy.Trim().ToLower() != "price") // Eğer sortBy price değilse ve başka bir sıralama yapılmadıysa
         {
              query = query.OrderByDescending(c => c.Date); // Genel bir varsayılan
         }
     }
-
-
     // // Veriyi veritabanından çek
-    // var concerts = await query.ToListAsync();
 // SAYFALAMA UYGULA
     var concerts = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
-    // Fiyata göre sıralama İSTENİYORSA, şimdi bellekte (LINQ to Objects) yap
+    // Fiyata göre sıralama İSTENİYORSA, şimdi bellekte (LINQ to Objects) 
     if (isPriceSort)
     {
         concerts = isDescending ?
                    concerts.OrderByDescending(c => c.Price).ToList() :
                    concerts.OrderBy(c => c.Price).ToList();
     }
-    // Eğer isPriceSort false ise ve başka bir sıralama yapılmadıysa (sortBy null veya geçersiz ise),
-    // ve yukarıdaki varsayılan OrderByDescending(c => c.Date) de atlandıysa, burada bir varsayılan daha eklenebilir.
-    // Ancak mevcut mantıkta, sortBy null ise en son query = query.OrderByDescending(c => c.Date); çalışır.
-    // Ve eğer isPriceSort ise, buradaki sıralama baskın olur.
-
+   
 
     var concertDtos = concerts.Select(concert => new ConcertDto
     {
